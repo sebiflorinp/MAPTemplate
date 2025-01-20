@@ -16,7 +16,7 @@ public class ConnectionAndServices {
     
     private ConnectionAndServices() {
         // Create the connection
-        String url = "jdbc:mysql://localhost:5432/"; // put the name of the db
+        String url = "jdbc:postgresql://localhost:5432/"; // put the name of the db
         String user = "postgres";
         String password = "MibtBcwn?1";
         
