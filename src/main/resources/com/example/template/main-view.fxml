@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.template.controllers.MainController">
    <children>
-      <Button layoutX="250.0" layoutY="187.0" mnemonicParsing="false" onAction="#handleChangePageAction" prefHeight="26.0" prefWidth="99.0" text="Next Page" />
+      <Button layoutX="57.0" layoutY="98.0" mnemonicParsing="false" onAction="#handleChangePageAction" prefHeight="26.0" prefWidth="99.0" text="Next Page" />
+      <TextField fx:id="textBar" layoutX="32.0" layoutY="55.0" />
    </children>
 </AnchorPane>

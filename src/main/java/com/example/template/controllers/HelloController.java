@@ -16,18 +16,28 @@ public class HelloController {
     private Stage stage;
     private Scene scene;
     private Parent root;
+    private String text;
 
     @FXML
     private Label welcomeText;
 
     @FXML
     protected void onHelloButtonClick(ActionEvent e) throws IOException {
-        welcomeText.setText("Welcome to JavaFX Application!");
+        System.out.println(text);
         root = FXMLLoader.load(HelloApplication.class.getResource("main-view.fxml"));
         stage = (Stage) ((Button) e.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+    
+    @FXML
+    public void initialize() {
+        welcomeText.setText(text);
+    }
+    
+    public void setText(String text) {
+        this.text = text;
     }
     
     
