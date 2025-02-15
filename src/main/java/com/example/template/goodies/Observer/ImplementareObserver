@@ -1,0 +1,28 @@
+// Observable
+
+    private List<Observer> observers;
+
+    @Override
+    public void addObserver(Observer observer) {
+        observers.add(observer);
+    }
+
+    @Override
+    public void removeObserver(Observer observer) {
+        observers.remove(observer);
+    }
+
+    @Override
+    public void notifyObservers() throws SQLException {
+        for (Observer observer : observers) {
+            observer.update();
+        }
+    }
+
+
+// Observer
+
+ @Override
+    public void update() throws SQLException {
+        // Logica care sa se intample (fetch sau update I guess)
+    }

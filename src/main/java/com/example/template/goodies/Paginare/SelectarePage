@@ -1,0 +1,25 @@
+@Override
+    public Page<Friendship> findAllOnPage(Pageable pageable) throws SQLException {
+        String sql = "SELECT * FROM \"TABELA\" OFFSET ? LIMIT ?"; // selecteaza toate elementele de pe pagina
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, pageable.getPageSize() * (pageable.getPageNumber() - 1));
+            preparedStatement.setInt(2, pageable.getPageSize());
+            ResultSet resultSet = preparedStatement.executeQuery();
+            List<Friendship> result = new ArrayList<>();
+            while (resultSet.next()) {
+                result.add(convertResultToFriendship(resultSet).get()); // problema ca ii dto and shit
+            }
+
+            sql = "SELECT COUNT(*) FROM \"TABELA\""; // elemtele totale pt a calcula nr de pagini
+            preparedStatement = connection.prepareStatement(sql);
+            resultSet = preparedStatement.executeQuery();
+            resultSet.next();
+            int totalNumberOfElements = resultSet.getInt(1);
+
+            Page<Friendship> page = new Page<>(result, totalNumberOfElements);
+            return page;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }

@@ -1,0 +1,9 @@
+// Se presupune ca combobox este
+ComboBox<ENTITATE> comboBox;
+
+// Adaugarea elementelor in combobox
+        List<ENTITATE> bands = (List<ENTITATE>) SERVICE.findAll();
+        COMBOBOX.getItems().addAll(bands);
+        
+// Selectarea unui element din combobox (onAction)
+        TIP selected = COMBOBOX.getSelectionModel().getSelectedItem();

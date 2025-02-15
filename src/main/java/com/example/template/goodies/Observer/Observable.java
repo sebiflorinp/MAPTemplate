@@ -1,4 +1,4 @@
-package com.example.template.utils;
+package com.example.template.goodies.Observer;
 
 public interface Observable {
     void addObserver(Observer observer);

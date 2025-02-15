@@ -1,0 +1,16 @@
+// Se presupune ca tableview este (cu tot cu coloane)
+TableView<ENTITATE> tableView;
+TableColumn<ENTITATE, TIP1> column1;
+TableColumn<ENTITATE, TIP2> column2;
+
+// Adaugare valori
+List<ENTITATE> bands = (List<ENTITATE>) SERVICE.findAll();
+ObservableList<ENTITATE> observableList = FXCollections.observableArrayList(bands);
+
+column1.setCellValueFactory(new PropertyValueFactory<>("camp1"));
+column2.setCellValueFactory(new PropertyValueFactory<>("camp2"));
+
+tableView.setItems(observableList);
+
+// Selectare valoare (onMouseClick)
+ENTITATE selected = tableView.getSelectionModel().getSelectedItem();

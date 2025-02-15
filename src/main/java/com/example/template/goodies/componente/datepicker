@@ -1,0 +1,5 @@
+// Se presupune ca datepicker este
+DatePicker datePicker;
+
+// Selectarea unei date din datepicker (onAction)
+Date date = java.sql.Date.valueOf(datePicker.getValue());

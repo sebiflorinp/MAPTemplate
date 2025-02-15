@@ -1,0 +1,11 @@
+// Se presupune ca bands este
+ListView<ENTITATE> bands;
+
+// Adaugarea elementelor in listview
+        List<ENTITATE> bands = (List<ENTITATE>) SERVICE.findAll();
+        LISTVIEW.getItems().addAll(bands);
+        
+// Selectarea unui element din listview (onMouseClick)
+        TIP selected = LISTVIEW.getSelectionModel().getSelectedItem();
+        
+// Celelalte operatii CRUD se realizeaza pe serviciu si se reiau datele (inclusiv cand umblii cu un observer)
