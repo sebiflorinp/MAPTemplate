@@ -22,15 +22,13 @@ public class MainController {
     
     
     public void handleChangePageAction(ActionEvent e) throws IOException {
-        String text = textBar.getText();
         FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         root = loader.load();
-        HelloController controller = loader.getController();
-        controller.setText(text);
-        
         stage = (Stage) ((Button) e.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+        HelloController controller = loader.getController();
+        controller.setData("BBBBBB");
     }
 }

@@ -33,11 +33,11 @@ public class HelloController {
     
     @FXML
     public void initialize() {
-        welcomeText.setText(text);
     }
     
-    public void setText(String text) {
-        this.text = text;
+    public void setData(String data) {
+        this.text = data;
+        welcomeText.setText(data);
     }
     
     

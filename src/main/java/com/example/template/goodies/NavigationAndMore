@@ -1,0 +1,39 @@
+// Navigate to a new view
+          FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource(VIEW));
+          root = loader.load();
+          stage = (Stage) ((Button) e.getSource()).getScene().getWindow();
+          scene = new Scene(root);
+          stage.setScene(scene);
+          stage.show();
+          
+// Create new window
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource(VIEW));
+            root = loader.load();
+            stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+            
+// New window and send data
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource(VIEW));
+            root = loader.load();
+            stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+            CONTROLLER controller = loader.getController();
+            controller.setData(data);
+            
+
+// The other controller needs the setData method
+public void setData(Object data) {
+    this.data = data;
+}
+
+// Change window and pass data
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource(VIEW));
+            root = loader.load();
+            stage = (Stage) ((Button) e.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+            CONTROLLER controller = loader.getController();
+            controller.setData(data);
